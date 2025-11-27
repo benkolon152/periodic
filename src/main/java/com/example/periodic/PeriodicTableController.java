@@ -7,16 +7,23 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+import javax.swing.text.html.parser.Element;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.Scanner;
+import java.util.*;
 
 public class PeriodicTableController implements Initializable {
     public List<Elements> elements;
+
+    public int[][] posMatrix= {
+            {1,1}
+    };
+
+    public Map<Integer, Integer[]> posMap = Map.of(1, new Integer[] {1,1});
+
+    public Map<String, Integer[]> symbolPosMap = Map.of("H", new Integer[]{1,1}, "He", new Integer[]{1, 10});
+
     @FXML public GridPane periodicGrid;
 
     public void readCsv(String filename) throws FileNotFoundException {
@@ -69,7 +76,15 @@ public class PeriodicTableController implements Initializable {
         }
 
         // place and show elements on view
-        addElement(periodicGrid,
-                5, 13, 2, Color.web("#FFB5B5"), "B", "Boron");
+        /*addElement(periodicGrid,
+                5, 13, 2, Color.web("#FFB5B5"), "B", "Boron");*/
+
+        for (int i = 0; i < 4; i++){
+            Elements element = elements.get(i);
+            addElement(periodicGrid,
+                    element.atomicNumber,
+                    symbolPosMap.get(element.symbol)[1], symbolPosMap.get(element.symbol)[0],
+                    element.cpkColor, element.symbol, element.name);
+        }
     }
 }
