@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 
 import javax.swing.text.html.parser.Element;
 import java.io.BufferedReader;
@@ -32,6 +33,17 @@ public class PeriodicTableController implements Initializable {
         System.out.println(elements.size());
     }
 
+    public void addElement(
+            GridPane grid,
+            int atomicNum,
+            int col, int row,
+            Color color,
+            String symbol,
+            String name
+    ){
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -41,6 +53,7 @@ public class PeriodicTableController implements Initializable {
         }
 
         // place and show elements on view
-
+        addElement(periodicGrid,
+                5, 13, 2, Color.web("#FFB5B5"), "B", "Boron");
     }
 }
