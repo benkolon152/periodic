@@ -5,8 +5,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 import javax.swing.text.html.parser.Element;
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -41,7 +43,13 @@ public class PeriodicTableController implements Initializable {
             String symbol,
             String name
     ){
+        Rectangle rect = new Rectangle(60, 50);
+        rect.setStroke(Color.BLACK);
+        rect.setFill(color);
+        rect.setArcHeight(8);
+        rect.setArcWidth(8);
 
+        grid.add(rect, col, row);
     }
 
     @Override

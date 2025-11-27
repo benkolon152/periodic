@@ -11,7 +11,7 @@ public class PeriodicTableApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(PeriodicTableApplication.class.getResource("PeriodicTable-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1280, 600);
+        Scene scene = new Scene(fxmlLoader.load(), 1280, 800);
         stage.setTitle("Periodic table!");
         stage.setScene(scene);
         stage.show();
