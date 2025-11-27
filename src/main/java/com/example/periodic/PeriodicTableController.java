@@ -3,6 +3,7 @@ package com.example.periodic;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 
 import javax.swing.text.html.parser.Element;
 import java.io.BufferedReader;
@@ -16,6 +17,7 @@ import java.util.Scanner;
 
 public class PeriodicTableController implements Initializable {
     public List<Elements> elements;
+    @FXML public GridPane periodicGrid;
 
     public void readCsv(String filename) throws FileNotFoundException {
         elements = new ArrayList<>();
@@ -37,5 +39,8 @@ public class PeriodicTableController implements Initializable {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
+        // place and show elements on view
+
     }
 }
