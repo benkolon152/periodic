@@ -7,9 +7,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-import javax.swing.text.html.parser.Element;
-import java.awt.*;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
@@ -49,7 +46,18 @@ public class PeriodicTableController implements Initializable {
         rect.setArcHeight(8);
         rect.setArcWidth(8);
 
+        Label symbolLabel = new Label(symbol);
+        symbolLabel.setTranslateX(25);
+        symbolLabel.setTranslateY(-10);
+        symbolLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: black; -fx-font-size: 16px;");
+
+        Label nameLabel = new Label(name);
+        nameLabel.setTranslateX(15);
+        nameLabel.setStyle("-fx-font-size: 10px; -fx-text-fill: black;");
+
         grid.add(rect, col, row);
+        grid.add(symbolLabel, col, row);
+        grid.add(nameLabel, col, row);
     }
 
     @Override
