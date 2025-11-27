@@ -22,7 +22,30 @@ public class PeriodicTableController implements Initializable {
 
     public Map<Integer, Integer[]> posMap = Map.of(1, new Integer[] {1,1});
 
-    public Map<String, Integer[]> symbolPosMap = Map.of("H", new Integer[]{1,1}, "He", new Integer[]{1, 10});
+    public Map<String, Integer[]> symbolPosMap;
+
+    public void populateSymbolPosMap(){
+        symbolPosMap = new HashMap<String, Integer[]>();
+        symbolPosMap.put("H", new Integer[]{1,1});
+        symbolPosMap.put("He", new Integer[]{1, 18});
+        symbolPosMap.put("Li", new Integer[]{2,1});
+        symbolPosMap.put("Be", new Integer[]{2,2});
+        symbolPosMap.put("B", new Integer[]{2,13});
+        symbolPosMap.put("C", new Integer[]{2,14});
+        symbolPosMap.put("N", new Integer[]{2,15});
+        symbolPosMap.put("O", new Integer[]{2,16});
+        symbolPosMap.put("F", new Integer[]{2,17});
+        symbolPosMap.put("Ne", new Integer[]{2,18});
+        symbolPosMap.put("Na", new Integer[]{3,1});
+        symbolPosMap.put("Mg", new Integer[]{3,2});
+        symbolPosMap.put("Al", new Integer[]{3,13});
+        symbolPosMap.put("Si", new Integer[]{3,14});
+        symbolPosMap.put("P", new Integer[]{3,15});
+        symbolPosMap.put("S", new Integer[]{3,16});
+        symbolPosMap.put("Cl", new Integer[]{3,17});
+        symbolPosMap.put("Ar", new Integer[]{3,18});
+    }
+
 
     @FXML public GridPane periodicGrid;
 
@@ -59,7 +82,7 @@ public class PeriodicTableController implements Initializable {
         symbolLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: black; -fx-font-size: 16px;");
 
         Label nameLabel = new Label(name);
-        nameLabel.setTranslateX(15);
+        nameLabel.setTranslateX(8);
         nameLabel.setStyle("-fx-font-size: 10px; -fx-text-fill: black;");
 
         grid.add(rect, col, row);
@@ -74,12 +97,13 @@ public class PeriodicTableController implements Initializable {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        populateSymbolPosMap();
 
         // place and show elements on view
         /*addElement(periodicGrid,
                 5, 13, 2, Color.web("#FFB5B5"), "B", "Boron");*/
 
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < 18; i++){
             Elements element = elements.get(i);
             addElement(periodicGrid,
                     element.atomicNumber,
