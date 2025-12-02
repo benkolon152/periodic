@@ -5,40 +5,44 @@
 
 <VBox xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.periodic.PeriodicTableController">
     <children>
-        <GridPane fx:id="periodicGrid" alignment="BOTTOM_LEFT" hgap="5" minHeight="271.0" prefHeight="271.0" prefWidth="271.0" style="-fx-background-color: #f0f0f0;" vgap="5">
+        <GridPane fx:id="periodicGrid" alignment="TOP_LEFT" hgap="6" vgap="6" style="-fx-background-color: #f0f0f0;" VBox.vgrow="ALWAYS">
             <padding>
-                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                <Insets top="20" right="20" bottom="20" left="20"/>
             </padding>
 
-
+            <!-- 18 columns -->
             <columnConstraints>
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
-                <ColumnConstraints />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="5.5556" />
             </columnConstraints>
+
+            <!-- 9 rows (7 main + lanthanide + actinide) -->
             <rowConstraints>
-                <RowConstraints />
-                <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
+                <RowConstraints vgrow="ALWAYS" percentHeight="11.1111" />
+                <RowConstraints vgrow="ALWAYS" percentHeight="11.1111" />
+                <RowConstraints vgrow="ALWAYS" percentHeight="11.1111" />
+                <RowConstraints vgrow="ALWAYS" percentHeight="11.1111" />
+                <RowConstraints vgrow="ALWAYS" percentHeight="11.1111" />
+                <RowConstraints vgrow="ALWAYS" percentHeight="11.1111" />
+                <RowConstraints vgrow="ALWAYS" percentHeight="11.1111" />
+                <RowConstraints vgrow="ALWAYS" percentHeight="11.1111" />
+                <RowConstraints vgrow="ALWAYS" percentHeight="11.1111" />
             </rowConstraints>
         </GridPane>
     </children>
